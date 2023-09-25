@@ -6,6 +6,8 @@ export const TempContainer = styled.View`
   padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
+
+  background-color: ${props => props.theme.colors.white};
 `;
 
 export const Logo = styled.Image`
@@ -15,7 +17,7 @@ export const Logo = styled.Image`
 
 export const LoginText = styled.Text`
   color: ${props => props.theme.colors.gray};
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
 
   margin-top: 36px;
@@ -23,7 +25,7 @@ export const LoginText = styled.Text`
 
 export const InformationText = styled.Text`
   color: ${props => props.theme.colors.lightgray};
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 
   margin-top: 8px;

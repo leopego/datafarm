@@ -1,8 +1,13 @@
 export const Theme = {
   colors: {
-    background: '#FFFFFF',
+    white: '#FFFFFF',
+
     gray: '#57616a',
+    gray100: '#efefef',
     lightgray: '#b1b5c3',
+
+    green100: '#518e42',
+    green: '#2bb01e',
   },
 };
 
