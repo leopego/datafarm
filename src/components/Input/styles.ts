@@ -10,6 +10,6 @@ export const InputLabel = styled.Text`
 `;
 
 export const TextInputContainer = styled.TextInput`
-  border-bottom-width: 2px;
+  border-bottom-width: 1.5px;
   border-bottom-color: ${props => props.theme.colors.gray100};
 `;

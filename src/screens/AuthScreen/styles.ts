@@ -24,7 +24,7 @@ export const LoginText = styled.Text`
 `;
 
 export const InformationText = styled.Text`
-  color: ${props => props.theme.colors.lightgray};
+  color: ${props => props.theme.colors.gray400};
   font-size: 14px;
   font-weight: 500;
 
