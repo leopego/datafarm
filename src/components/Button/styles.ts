@@ -1,14 +1,13 @@
 import styled from 'styled-components/native';
 
 export const ButtonContainer = styled.TouchableOpacity`
-  background-color: ${props => props.theme.colors.green};
-
+  padding: 12px;
+  border-radius: 3px;
   justify-content: center;
   align-items: center;
 
-  padding: 12px;
-
-  border-radius: 8px;
+  background-color: ${props =>
+    props.disabled ? props.theme.colors.green100 : props.theme.colors.green};
 `;
 
 export const ButtonText = styled.Text`
