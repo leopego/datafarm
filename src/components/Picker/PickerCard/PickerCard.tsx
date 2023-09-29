@@ -4,16 +4,16 @@ import {PickerDataTypes} from '../Picker';
 
 interface PickerCardProps {
   name: string;
-  selectedReason: PickerDataTypes | null;
+  selected: PickerDataTypes | null;
   onPress: () => void;
 }
 
-export function PickerCard({name, onPress, selectedReason}: PickerCardProps) {
+export function PickerCard({name, onPress, selected}: PickerCardProps) {
   return (
     <PickerCardContainer
       onPress={onPress}
       style={{
-        backgroundColor: name === selectedReason?.name ? '#e9f1e8' : 'white',
+        backgroundColor: name === selected?.name ? '#e9f1e8' : 'white',
       }}>
       <PickerCardTitle>{name}</PickerCardTitle>
     </PickerCardContainer>

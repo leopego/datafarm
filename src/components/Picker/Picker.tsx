@@ -22,19 +22,17 @@ export type PickerDataTypes = Farm | Field | Machinery;
 interface Props extends TouchableOpacityProps {
   label: string;
   data: Farm[] | Field[] | Machinery[] | undefined;
+  selected: PickerDataTypes | null;
   onSelect: (item: Farm | Field | Machinery | null) => void;
 }
 
 export function Picker({
   label = '',
   data,
+  selected,
   onSelect,
   ...touchableOpacityProps
 }: Props) {
-  const [selectedItem, setSelectedItem] = useState<
-    Farm | Machinery | Field | null
-  >(null);
-
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
   function handleModalShow() {
@@ -42,9 +40,7 @@ export function Picker({
   }
 
   function handleSelectedItem(item: Farm | Machinery | Field) {
-    setSelectedItem(item);
     onSelect(item);
-
     handleModalShow();
   }
 
@@ -53,9 +49,9 @@ export function Picker({
       <PickerLabel>{label}</PickerLabel>
       <InformationWrapper>
         <InformationContainer>
-          <PickerName>{selectedItem?.name}</PickerName>
-          {selectedItem && 'serialNumber' in selectedItem && (
-            <PickerSerialNumber>{selectedItem.serialNumber}</PickerSerialNumber>
+          <PickerName>{selected?.name}</PickerName>
+          {selected && 'serialNumber' in selected && (
+            <PickerSerialNumber>{selected?.serialNumber}</PickerSerialNumber>
           )}
         </InformationContainer>
         <ChevronIcon />
@@ -76,7 +72,7 @@ export function Picker({
             renderItem={({item}) => (
               <PickerCard
                 name={item.name}
-                selectedReason={selectedItem}
+                selected={selected}
                 onPress={() => handleSelectedItem(item)}
               />
             )}
