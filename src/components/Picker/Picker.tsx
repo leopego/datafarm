@@ -14,16 +14,16 @@ import {
 import {FlatList, Modal, Pressable, TouchableOpacityProps} from 'react-native';
 import {ChevronIcon} from '../../assets/icons/ChevronIcon';
 import {CloseIcon} from '../../assets/icons/CloseIcon';
-import {Farm, Field, Machinery} from '../../types/types';
+import {FarmType, FieldType, MachineryType} from '../../types/types';
 import {PickerCard} from './PickerCard/PickerCard';
 
-export type PickerDataTypes = Farm | Field | Machinery;
+export type PickerDataTypes = FarmType | FieldType | MachineryType;
 
 interface Props extends TouchableOpacityProps {
   label: string;
-  data: Farm[] | Field[] | Machinery[] | undefined;
+  data: FarmType[] | FieldType[] | MachineryType[] | undefined;
   selected: PickerDataTypes | null;
-  onSelect: (item: Farm | Field | Machinery | null) => void;
+  onSelect: (item: FarmType | FieldType | MachineryType | null) => void;
 }
 
 export function Picker({
@@ -39,7 +39,7 @@ export function Picker({
     setModalIsVisible(isVisible => !isVisible);
   }
 
-  function handleSelectedItem(item: Farm | Machinery | Field) {
+  function handleSelectedItem(item: FarmType | MachineryType | FieldType) {
     onSelect(item);
     handleModalShow();
   }

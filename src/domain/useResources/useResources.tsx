@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {api} from '../api';
 
 import {useResourceStore} from '../../store/resourceStore';
+import {useUserStore} from '../../store/userStore';
 
 export const useResources = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -10,10 +11,17 @@ export const useResources = () => {
   const data = useResourceStore(state => state.resources);
   const updateResources = useResourceStore(state => state.updateResources);
 
+  const tokenAuthorization = useUserStore(state => state.tokenAuthorization);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get('mobile/machine/resources');
+        const response = await api.get('mobile/machine/resources', {
+          headers: {
+            'Content-Type': 'application/json',
+            TokenAuthorization: tokenAuthorization,
+          },
+        });
 
         updateResources(response.data.data.resources);
       } catch (error) {
@@ -24,7 +32,7 @@ export const useResources = () => {
     };
 
     fetchData();
-  }, [updateResources]);
+  }, [updateResources, tokenAuthorization]);
 
   return {
     isLoading,

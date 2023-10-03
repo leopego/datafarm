@@ -30,3 +30,7 @@ export const InformationText = styled.Text`
 
   margin-top: 8px;
 `;
+
+export const ButtonWrapper = styled.View`
+  height: 48px;
+`;

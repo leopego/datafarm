@@ -1,31 +1,45 @@
-export interface Resources {
-  machineries: Machinery[];
-  farms: Farm[];
-  reasons: Reason[];
-}
+export type ResourcesType = {
+  machineries: MachineryType[];
+  farms: FarmType[];
+  reasons: ReasonType[];
+};
 
-export interface Machinery {
+export type MachineryType = {
   id: number;
   name: string;
   serialNumber: null | string;
   growerId: number;
-}
+};
 
-export interface Farm {
+export type FarmType = {
   id: number;
   name: string;
   growerId: number;
   growerName: string;
-  fields?: Field[];
-}
+  fields?: FieldType[];
+};
 
-export interface Field {
+export type FieldType = {
   id: number;
   name: string;
-}
+};
 
-export interface Reason {
+export type ReasonType = {
   id: number;
   name: string;
   icon: string;
-}
+};
+
+export type StopType = {
+  id: string;
+  farm: FarmType;
+  field: FieldType;
+  machinery: MachineryType;
+  note?: string;
+  reason: ReasonType;
+  minutes: number;
+  longitude: number;
+  latitude: number;
+  synced: boolean;
+  errorOnSync: boolean;
+};

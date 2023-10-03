@@ -11,6 +11,11 @@ export const Theme = {
 
     green100: '#518e42',
     green: '#2bb01e',
+
+    orange100: '#fdc687',
+    orange200: '#fda632',
+
+    red: '#FF0000',
   },
 };
 

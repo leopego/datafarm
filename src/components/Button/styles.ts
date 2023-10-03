@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ButtonContainer = styled.TouchableOpacity`
+  flex: 1;
   padding: 12px;
   border-radius: 3px;
   justify-content: center;
@@ -15,3 +16,5 @@ export const ButtonText = styled.Text`
   font-size: 16px;
   font-weight: bold;
 `;
+
+export const LoadingContainer = styled.ActivityIndicator``;

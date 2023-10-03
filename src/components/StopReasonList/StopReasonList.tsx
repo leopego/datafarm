@@ -1,19 +1,19 @@
 import React from 'react';
 import {ListContainer, ListLabel, ReasonContainer, ReasonTitle} from './styles';
 import {IconXml} from '../../assets/icons/IconXml';
-import {Reason} from '../../types/types';
+import {ReasonType} from '../../types/types';
 
 interface ReasonProps {
-  reason: Reason;
+  reason: ReasonType;
 
-  selectedReason: Reason | null;
+  selectedReason: ReasonType | null;
   onPress: () => void;
 }
 
 interface Props {
-  data: Reason[] | null;
-  selectedReason: Reason | null;
-  setSelectedReason: (reason: Reason | null) => void;
+  data: ReasonType[] | null;
+  selectedReason: ReasonType | null;
+  setSelectedReason: (reason: ReasonType | null) => void;
 }
 
 function ReasonCard({reason, selectedReason, onPress}: ReasonProps) {
@@ -36,7 +36,7 @@ export function StopReasonList({
   selectedReason,
   setSelectedReason,
 }: Props) {
-  function handleSelectedReason(reason: Reason) {
+  function handleSelectedReason(reason: ReasonType) {
     if (selectedReason?.id === reason?.id) {
       setSelectedReason(null);
     } else {

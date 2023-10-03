@@ -35,4 +35,31 @@ export const NoteInput = styled.TextInput`
   border-width: 1px;
   border-color: ${props => props.theme.colors.gray200};
   border-radius: 4px;
+
+  min-height: 60px;
+`;
+
+export const FooterContainer = styled.View`
+  height: 80px;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  padding-left: 24px;
+  padding-right: 24px;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+
+  background-color: ${props => props.theme.colors.white};
+`;
+
+export const FooterIconContainer = styled.TouchableOpacity`
+  padding-left: 8px;
+  padding-right: 16px;
+
+  justify-content: center;
+  align-items: center;
 `;

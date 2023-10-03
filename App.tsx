@@ -1,5 +1,6 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-// import {AuthScreen} from './src/screens/AuthScreen/AuthScreen';
+
 import {ThemeProvider} from 'styled-components/native';
 import {Theme} from './src/theme/theme';
 
